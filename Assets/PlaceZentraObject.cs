@@ -39,9 +39,8 @@ public class PlaceZentraObject : MonoBehaviour
                 {
                     //cursor atayacağız
                     if (nextZentraObject != null)
-                    {
                         nextZentraObject.GetComponent<BoxCollider>().enabled = true;//Open past objects collider
-                    }
+
                     nextZentraObject = hit.collider.transform;
 
                     for (int i = 0; i < cursors.Length; i++)
@@ -62,8 +61,6 @@ public class PlaceZentraObject : MonoBehaviour
                         if (Input.GetTouch(0).deltaPosition.x > 0)
                             GetComponent<Board>().RotateBoardLeft();
                     }
-
-                    //transpose grid////////////////////////////////////////////////////////
                 }
 
                 if (hit.collider.tag == "GameController" && nextZentraObject != null && cursor != null)//Before placing Zentra Object show place with cursor object
@@ -78,21 +75,7 @@ public class PlaceZentraObject : MonoBehaviour
                     if (!PlaceValid())
                     {
                         cursor.SetActive(false);
-                        //Debug.Log("invalid");
                     }
-                    //Transform instance = Instantiate(nextZentraObject, hitPosition, nextZentraObject.rotation);
-
-                    //burası değişecek
-
-                    /*if (!isEmpty(cursor.transform))
-                    {
-                        Debug.Log("Can't");
-                    }
-                    else
-                    {
-                        nextZentraObject.position = hitPosition;
-                        AddToGrid();
-                    }*/
                 }
             }
         }
@@ -212,7 +195,7 @@ public class PlaceZentraObject : MonoBehaviour
     {
         foreach (Transform cube in cursor.transform)
             if (Mathf.RoundToInt(cube.position.x) < 10 && Mathf.RoundToInt(cube.position.x) >= 0//Board içinde bir yer mi (x ekseni için)?
-            && Mathf.RoundToInt(cube.position.z) < 10 && Mathf.RoundToInt(cube.position.z) >= 0)//Board içinde bir yer mi (z ekseni için)?
+            &&  Mathf.RoundToInt(cube.position.z) < 10 && Mathf.RoundToInt(cube.position.z) >= 0)//Board içinde bir yer mi (z ekseni için)?
             {
                 if (grid[Mathf.RoundToInt(cube.position.x), Mathf.RoundToInt(cube.position.y / 0.4f), Mathf.RoundToInt(cube.position.z)] != null)//bu kare boş mu?
                     return false;
