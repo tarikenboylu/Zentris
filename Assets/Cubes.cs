@@ -36,14 +36,14 @@ public class Cubes : MonoBehaviour
         if (onDropping)
         {
             colorOverTime += Time.deltaTime * 3;
-            cubeColor = Color.Lerp(Color.red, new Color(.2f, .2f, .2f), colorOverTime);
+            cubeColor = Color.Lerp(new Color(241 / 255f, 195 / 255f, 47 / 255f), new Color(.2f, .2f, .2f), colorOverTime);
             GetComponent<MeshRenderer>().material.color = cubeColor;
             Destroy(gameObject, 3);
         }
         else
             GetComponent<MeshRenderer>().material.color = Color.Lerp(cubeColor, Color.red, transform.position.y / 1.4f);
 
-        if (markedTime > 0)
+        if (markedTime > 0 && ! onDropping)
         {
             markedTime -= Time.deltaTime;
 
