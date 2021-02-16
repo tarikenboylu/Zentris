@@ -23,11 +23,11 @@ public class Cubes : MonoBehaviour
             int u = Random.Range(0, 3);
 
             if (u >= 1)
-                Instantiate(upCubePrefab, transform.position + Vector3.up * 0.4f, transform.rotation, transform.parent);
+                Instantiate(upCubePrefab, transform.position + Vector3.up * 0.2f, transform.rotation, transform.parent);
             if (u >= 2)
-                Instantiate(upCubePrefab, transform.position + Vector3.up * 0.4f * 2, transform.rotation, transform.parent);
+                Instantiate(upCubePrefab, transform.position + Vector3.up * 0.2f * 2, transform.rotation, transform.parent);
             if (u == 3)
-                Instantiate(upCubePrefab, transform.position + Vector3.up * 0.4f * 3, transform.rotation, transform.parent);
+                Instantiate(upCubePrefab, transform.position + Vector3.up * 0.2f * 3, transform.rotation, transform.parent);
         }
     }
 
@@ -71,6 +71,7 @@ public class Cubes : MonoBehaviour
 
     public void SetMarked()
     {
-        markedTime = 4;
+        if(markedTime <= 0)
+            markedTime = 4;
     }
 }

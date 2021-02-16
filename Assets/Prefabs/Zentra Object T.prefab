@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4913808159351508611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 1}
-  m_LocalScale: {x: 0.9, y: 0.4, z: 0.9}
+  m_LocalScale: {x: 0.9, y: 0.2, z: 0.9}
   m_Children: []
   m_Father: {fileID: 4913808159427726423}
   m_RootOrder: 2
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upCube: 0
+  markedTime: 0
   upCubePrefab: {fileID: 4072197180131158272, guid: 7d77150d745e28b418f49fd02b98b303, type: 3}
 --- !u!1 &4913808159427726422
 GameObject:
@@ -202,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 4913808160035770609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.4, z: 0.9}
+  m_LocalScale: {x: 0.9, y: 0.2, z: 0.9}
   m_Children: []
   m_Father: {fileID: 4913808159427726423}
   m_RootOrder: 1
@@ -282,6 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upCube: 0
+  markedTime: 0
   upCubePrefab: {fileID: 4072197180131158272, guid: 7d77150d745e28b418f49fd02b98b303, type: 3}
 --- !u!1 &4913808160165930264
 GameObject:
@@ -312,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 4913808160165930264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.4, z: 0.9}
+  m_LocalScale: {x: 0.9, y: 0.2, z: 0.9}
   m_Children: []
   m_Father: {fileID: 4913808159427726423}
   m_RootOrder: 0
@@ -392,6 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upCube: 0
+  markedTime: 0
   upCubePrefab: {fileID: 4072197180131158272, guid: 7d77150d745e28b418f49fd02b98b303, type: 3}
 --- !u!1 &8364341229508129727
 GameObject:
@@ -422,7 +425,7 @@ Transform:
   m_GameObject: {fileID: 8364341229508129727}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.4, z: 0.9}
+  m_LocalScale: {x: 0.9, y: 0.2, z: 0.9}
   m_Children: []
   m_Father: {fileID: 4913808159427726423}
   m_RootOrder: 3
@@ -502,4 +505,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upCube: 0
+  markedTime: 0
   upCubePrefab: {fileID: 4072197180131158272, guid: 7d77150d745e28b418f49fd02b98b303, type: 3}

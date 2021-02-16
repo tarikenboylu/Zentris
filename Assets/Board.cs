@@ -7,7 +7,6 @@ public class Board : MonoBehaviour
     public float t = 0;
     //public float t1;
     //public float t2;
-    public float rad;
     Quaternion r1;
     Quaternion r2;
 
@@ -23,6 +22,7 @@ public class Board : MonoBehaviour
             t -= Time.deltaTime;
             transform.rotation = Quaternion.Lerp(r2, r1, t);
         }
+
         /*if (t1 > 0)
         {
             t1 -= Time.deltaTime;
