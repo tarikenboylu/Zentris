@@ -35,6 +35,7 @@ public class Cubes : MonoBehaviour
     {
         if (onDropping)
         {
+            markedTime = 0;
             colorOverTime += Time.deltaTime * 3;
             cubeColor = Color.Lerp(new Color(241 / 255f, 195 / 255f, 47 / 255f), new Color(.2f, .2f, .2f), colorOverTime);
             GetComponent<MeshRenderer>().material.color = cubeColor;
@@ -43,7 +44,7 @@ public class Cubes : MonoBehaviour
         else
             GetComponent<MeshRenderer>().material.color = Color.Lerp(cubeColor, Color.red, transform.position.y / 1.4f);
 
-        if (markedTime > 0 && ! onDropping)
+        if (markedTime > 0)
         {
             markedTime -= Time.deltaTime;
 
@@ -61,7 +62,8 @@ public class Cubes : MonoBehaviour
             GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
             GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.Lerp(Color.black, Color.white/2, plsTime));
         }
-
+        else
+            GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
     }
 
     public void ChangeColor()
