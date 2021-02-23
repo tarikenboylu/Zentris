@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlaceZentraObject : MonoBehaviour
 {
     Vector3 hitPosition;
+    Vector3 has;
 
     public GameObject[] cursors;
     public GameObject cursor;
@@ -45,18 +46,6 @@ public class PlaceZentraObject : MonoBehaviour
                     cursor = cursors[nextZentraObject.GetComponent<ZentraObject>().prefabNumber];//A chosen objects cursor
                     cursor.SetActive(true);
                     nextZentraObject.GetComponent<BoxCollider>().enabled = false;//Close new cursor objects collider
-                }
-
-                if (hit.collider.CompareTag("Rotator") && nextZentraObject == null)//Rotating board control
-                {
-                    if (Input.GetTouch(0).phase == TouchPhase.Moved) 
-                    { 
-                        if (Input.GetTouch(0).deltaPosition.x < 0)
-                            GetComponent<Board>().RotateBoardRight();//Rotate right
-                        
-                        if (Input.GetTouch(0).deltaPosition.x > 0)
-                            GetComponent<Board>().RotateBoardLeft();//Rotate left
-                    }
                 }
 
                 if (hit.collider.tag == "GameController" && nextZentraObject != null && cursor != null)//Before placing Zentra Object show place with cursor object
@@ -254,6 +243,24 @@ public class PlaceZentraObject : MonoBehaviour
                 return false;
 
         return true;
+    }
+
+    public void GetTouchPos()
+    {
+        if (Input.touchCount > 0)
+            has = Input.GetTouch(0).position;
+    }
+
+    public void ControlTouchPos()
+    {
+        if (Input.touchCount > 0) 
+        { 
+            if (has.x < Input.GetTouch(0).position.x)
+                GetComponent<Board>().RotateBoardLeft();//Rotate left
+
+            if (has.x > Input.GetTouch(0).position.x)
+                GetComponent<Board>().RotateBoardRight();//Rotate right
+        }
     }
 
     IEnumerator DropUpCubes(int x, int y, int z)
